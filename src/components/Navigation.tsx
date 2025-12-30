@@ -38,7 +38,7 @@ const Navigation = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-4 relative">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
@@ -98,35 +98,64 @@ const Navigation = () => {
           </button>
         </div>
 
+        {/* Mobile Menu Backdrop */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+            />
+          )}
+        </AnimatePresence>
+
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pb-4"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50"
             >
-              <div className="flex flex-col space-y-4">
-                {navLinks.map((link) => (
-                  <Link
+              <div className="flex flex-col p-2">
+                {navLinks.map((link, index) => (
+                  <motion.div
                     key={link.path}
-                    href={link.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`font-medium transition-colors ${
-                      pathname === link.path ? 'text-blue-600' : 'text-gray-700'
-                    }`}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
                   >
-                    {link.name}
-                  </Link>
+                    <Link
+                      href={link.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`block font-medium transition-all p-4 rounded-xl ${
+                        pathname === link.path 
+                          ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50' 
+                          : 'text-gray-700 hover:bg-gray-50 active:bg-gray-100'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 ))}
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="btn-primary w-full text-center"
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.05 }}
+                  className="p-2 pt-3 border-t border-gray-100 mt-2"
                 >
-                  Let&apos;s Talk
-                </Link>
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="btn-primary w-full text-center py-3 text-base font-semibold"
+                  >
+                    Let&apos;s Talk
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           )}
