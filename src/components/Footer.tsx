@@ -57,6 +57,7 @@ const Footer = () => {
               <li className="text-gray-300">UI/UX Design</li>
               <li className="text-gray-300">E-commerce</li>
               <li className="text-gray-300">SEO Optimization</li>
+              <li className="text-gray-300">Cloud Services</li>
             </ul>
           </div>
 
@@ -72,8 +73,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3 text-gray-300">
                 <Phone className="w-5 h-5 text-blue-400" />
-                <a href="tel:+918799783109" className="hover:text-blue-400 transition-colors">
-                  +91 8799783109
+                <a href="tel:+918476976540" className="hover:text-blue-400 transition-colors">
+                  +91 8476976540
                 </a>
               </li>
               <li className="flex items-center space-x-3 text-gray-300">

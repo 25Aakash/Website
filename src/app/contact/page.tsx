@@ -66,13 +66,13 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold mb-6 text-gray-900">Get in Touch</h3>
               
               <div className="space-y-6">
-                <a href="tel:+918799783109" className="flex items-center space-x-4 text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="tel:+918476976540" className="flex items-center space-x-4 text-gray-600 hover:text-blue-600 transition-colors">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone</p>
-                    <p className="font-semibold">+91 8799783109</p>
+                    <p className="font-semibold">+91 8476976540</p>
                   </div>
                 </a>
 

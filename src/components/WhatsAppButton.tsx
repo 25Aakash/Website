@@ -9,7 +9,7 @@ const WhatsAppButton = () => {
   const [showInitialMessage, setShowInitialMessage] = useState(false);
   
   // Replace with your WhatsApp business number (include country code without + or -)
-  const phoneNumber = '918799783109'; // e.g., '919876543210' for India
+  const phoneNumber = '918476976540'; // e.g., '919876543210' for India
   const defaultMessage = 'Hi! I would like to know more about your services.';
   
   useEffect(() => {

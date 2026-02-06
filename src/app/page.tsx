@@ -55,6 +55,11 @@ export default function Home() {
                 description: 'Ongoing maintenance, updates, and technical support to keep your product running smoothly.',
                 icon: '🛠️',
               },
+              {
+                title: 'Cloud Services',
+                description: 'Cloud infrastructure setup, migration, and management on AWS.',
+                icon: '☁️',
+              },
             ].map((service, index) => (
               <div key={index} className="service-card group">
                 <div className="text-5xl mb-4">{service.icon}</div>
@@ -87,7 +92,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Expense Tracker */}
-            <div className="project-card group">
+            <a href="https://riddhisiddhitrading.co.in" target="_blank" rel="noopener noreferrer" className="project-card group block cursor-pointer">
               <div className="h-48 bg-gray-200 rounded-t-xl overflow-hidden relative">
                 <Image 
                   src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop" 
@@ -100,23 +105,23 @@ export default function Home() {
                 <h3 className="text-xl font-bold mb-2 text-gray-900">Expense Tracker</h3>
                 <p className="text-gray-600 mb-4">Personal finance management app with real-time tracking, budget insights, and expense analytics.</p>
               </div>
-            </div>
+            </a>
 
-            {/* E-commerce Store */}
-            <div className="project-card group">
+            {/* Job Portal */}
+            <a href="https://jobconnectapp.com" target="_blank" rel="noopener noreferrer" className="project-card group block cursor-pointer">
               <div className="h-48 bg-gray-200 rounded-t-xl overflow-hidden relative">
                 <Image 
-                  src="https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop" 
-                  alt="E-commerce Platform"
+                  src="/projects/job-connect.png" 
+                  alt="Job Connect Portal"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900">E-commerce Platform</h3>
-                <p className="text-gray-600 mb-4">Full-featured online store with payment integration, inventory management, and admin dashboard.</p>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">Job Connect</h3>
+                <p className="text-gray-600 mb-4">A modern hiring platform for both job seekers and employers — featuring AI-powered matching, candidate browsing, application tracking, and real-time notifications.</p>
               </div>
-            </div>
+            </a>
 
             {/* Restaurant Website */}
             <div className="project-card group">
